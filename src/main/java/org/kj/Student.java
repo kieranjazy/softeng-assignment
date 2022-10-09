@@ -14,10 +14,10 @@ public class Student {
     private List<Course> courses;
     private List<Module> modules;
 
-    public Student(String fName, String lName, DateTime dob, String id) {
+    public Student(String fName, String lName, String dobString, String id) {
         this.fName = fName;
         this.lName = lName;
-        this.dob = dob;
+        this.dob = DateTime.parse(dobString);
         this.id = id;
         this.courses = new ArrayList<Course>();
         this.modules = new ArrayList<Module>();
