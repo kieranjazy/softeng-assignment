@@ -2,6 +2,7 @@ package org.kj;
 
 import org.joda.time.DateTime;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
@@ -15,6 +16,8 @@ public class Course {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.students = new ArrayList<Student>();
+        this.modules = new ArrayList<Module>();
     }
 
     //Getters
@@ -29,7 +32,7 @@ public class Course {
 
     public void setName(String name) { this.name = name; }
 
-    public void addModules(Module module) { modules.add(module); }
+    public void addModule(Module module) { modules.add(module); }
     public void addStudent(Student student) {
         students.add(student);
         student.addCourse(this);

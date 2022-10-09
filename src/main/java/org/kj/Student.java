@@ -30,7 +30,7 @@ public class Student {
     public String getFullName() { return fName + ' ' + lName; }
 
     public DateTime getDob() { return dob; }
-    public int getAge() { return Years.yearsBetween(DateTime.now(), dob).getYears(); }
+    public int getAge() { return Math.abs(Years.yearsBetween(DateTime.now(), dob).getYears()); }
     public String getId() { return id; }
     public String getUsername() { return fName + lName + getAge(); }
     public List<Course> getCourses() { return courses; }

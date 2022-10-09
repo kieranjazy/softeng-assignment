@@ -1,5 +1,6 @@
 package org.kj;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Module {
@@ -9,12 +10,15 @@ public class Module {
     private List<Course> courses;
     private Lecturer supervisor;
 
-    public Module(String name, String id, List<Student> students, List<Course> courses, Lecturer supervisor) {
+    public Module(String name, String id, Lecturer supervisor) {
         this.name = name;
         this.id = id;
-        this.students = students;
-        this.courses = courses;
+
         this.supervisor = supervisor;
+        this.supervisor.addModule(this);
+
+        this.students = new ArrayList<Student>();
+        this.courses = new ArrayList<Course>();
     }
 
     //Getters
@@ -37,7 +41,7 @@ public class Module {
 
     public void addCourses(Course course) {
         courses.add(course);
-        course.addModules(this);
+        course.addModule(this);
     }
 
     public void setSupervisor(Lecturer supervisor) { this.supervisor = supervisor; }
