@@ -1,6 +1,7 @@
-package org.kj;
-
-import org.joda.time.DateTime;
+import org.kj.Course;
+import org.kj.Lecturer;
+import org.kj.Module;
+import org.kj.Student;
 
 import static org.junit.Assert.*;
 
