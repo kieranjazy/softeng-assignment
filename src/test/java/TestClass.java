@@ -4,10 +4,11 @@ import org.kj.Module;
 import org.kj.Student;
 
 import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
 public class TestClass {
 
-    @org.junit.Test
+    @Test
     public void testUsernames() {
         Student testStudent = new Student("John", "Smith", "2001-01-01", "1");
         assertEquals(testStudent.getAge(), 21);
@@ -18,7 +19,7 @@ public class TestClass {
         assertEquals(testLecturer.getUsername(), testLecturer.getFirstName() + testLecturer.getLastName() + testLecturer.getAge());
     }
 
-    @org.junit.Test
+    @Test
     public void testAddStudentToCourse() {
         Student testStudent = new Student("John", "Smith", "2001-01-01", "1");
         Course testCourse = new Course("IT", "2022-09-01", "2022-12-20");
@@ -32,7 +33,7 @@ public class TestClass {
         assertArrayEquals(testCourse.getStudents().toArray(), new Student[]{testStudent});
     }
 
-    @org.junit.Test
+    @Test
     public void testAddLecturerToModule() {
         Lecturer testLecturer = new Lecturer("Jenny", "Smith", "1981-01-01", "1");
         assertArrayEquals(testLecturer.getModules().toArray(), new Module[]{});
@@ -42,7 +43,7 @@ public class TestClass {
         assertArrayEquals(testLecturer.getModules().toArray(), new Module[]{testModule});
     }
 
-    @org.junit.Test
+    @Test
     public void testAddStudentToCourseAndModule() {
         Student testStudent = new Student("John", "Smith", "2001-01-01", "1");
         Lecturer testLecturer = new Lecturer("Jenny", "Smith", "1981-01-01", "1");
